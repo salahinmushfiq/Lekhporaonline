@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="jquery.ripples.js"></script>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css"/>
+<!--     <link rel="stylesheet" href="style1.css"/>-->
+    <link rel="shortcut icon" href="images/logoCropped.png" />
+    <title>Lekhapora Online</title>
+
+    <style>
+        :root{
+            --primary_color_accent: linear-gradient(135deg,#4097f9,#0af0c7);
+        }
+        html{
+         
+            margin:0;
+            padding:0;
+        
+        }
+        body{
+        
+            margin:0;
+            padding:0;
+        }
+        .main{
+        
+            height:auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-gap: 10px;
+            box-sizing: border-box;
+        
+        }
+        
+        
+/*
+        .slider ul{
+           
+           position:relative;
+           width:100%;
+           height:700px;
+           background-color:aliceblue;
+        
+        }
+        .slider li:nth-child(1){
+           
+           position:relative;
+           width:100%;
+           height:700px;
+           background:
+        
+        }
+        .slider li:nth-child(2){
+           
+           position:relative;
+           width:100%;
+           height:700px;
+           background-color:aliceblue;
+        
+        }
+        .slider li:nth-child(3){
+           
+           position:relative;
+           width:100%;
+           height:700px;
+           background-color:aliceblue;
+        
+        }
+*/
+        .cover{
+            position:relative;
+            width:100%;
+            height:auto;
+        }
+        
+
+        
+    .nav-wrapper{
+       z-index:10;
+        position:fixed;
+        width:100%;
+/*        background:  rgba(255,255,255,.1);*/
+       background:  rgba(255,255,255,.4);
+        background:  #222322;
+        
+        height: 50px;
+        /*padding-top:10px;*/
+        padding-bottom:10px;
+    
+    }   
+    .nav{
+        z-index:10; 
+        width:100%;
+        height: 50px;
+/*        background-color:grey;*/
+        
+        opacity:0.8;
+        position:relative;
+    }
+    .nav-links{
+        z-index:10;
+        position: absolute;
+        
+        width:90%;
+        left:8%;
+        /*background-color: grey;*/
+        z-index: 3;
+        height: 40px;
+        top:5px;
+        bottom:5px;
+        
+        
+        align-items: center;
+        margin-left: auto;
+        padding: 0;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-links li a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 40px;
+        /*color:black;*/
+        color:#ffd302;
+        
+        
+        
+        
+    }
+    
+    .nav-links li{
+        z-index:10;
+        list-style: none;
+        width: inherit;
+        height:inherit;
+        margin-left: 15px;
+        overflow: hidden;
+          }
+    
+/* navbar button hover effect   */
+    .btn-item{
+        z-index:10;
+        background:  rgba(255,255,255,0);
+        
+        color:white;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        
+        transition: all 0.2s ease;
+        
+        display: block;
+        width: inherit;
+        height: 90%;
+        
+        text-align: center;
+        
+
+
+        
+    }
+    
+    .btn-item:hover{
+        
+        
+        
+        
+        
+        background:  rgba(255,255,255,.2);
+        transform:scaleX(.9);
+        
+        transform-style: preserve-3d;
+/*
+        transform: rotateX(15deg);
+        box-shadow: 0 15px 15px lightblue;
+*/
+        box-shadow: 0 15px 15px rgba(255,255,255,.01);
+        transition: all 1s ease-out;
+        transform-origin: center;
+    }
+    html[data-useragent*='Android'] body {
+    background-color: silver;
+        border-top: 1em solid blue;
+}
+/* navbar button hover effect   */
+    @media screen and (max-width: 768px){
+        
+/*        responsible for bubble effect*/
+       /*        responsible for bubble effect*/
+        .drawer{
+           
+            margin-bottom: auto;
+            margin-top: auto;
+            width:100%;
+            height: inherit;
+        }
+        .nav-links{
+            position:fixed;
+            flex-direction:column;
+            width:84%;
+            height:75vh;
+            color:white;
+            top:12vh;
+            
+            align-content: left;
+            clip-path:circle(0 at 90% -10%); 
+            -webkit-clip-path:circle(0 at 90% 10%);
+            align-content: center;
+            transition: all 1s ease-out;
+            text-align: center;
+            opacity: 0.95;
+            
+            
+        }
+        .btn-item{
+           margin-top:2px; 
+           width: 80%;
+            
+            margin-right:10%; 
+            margin-left:10%; 
+        }
+        .btn-item:hover{
+        
+/*        width:97%;*/
+/*        border-color: dimgrey;*/
+/*        transform: rotateY(15deg);*/
+        transform: scale(.97);
+        box-shadow: -2px 0 2px silver;
+
+        transition: all 1s ease-out;
+        }
+        .nav-links.open{
+            clip-path:circle(1000px at 90% 10%); 
+            -webkit-clip-path:circle(1000px at 90% 10%);
+            transition: all 1s ease-out;
+/*            background: rgba(255,255,255,.1);*/
+            background-color:#222322;
+            
+        }
+        /*        responsible for bubble effect*/
+        .line{
+            width:30px;
+            height:3px;
+            background:white;
+            margin: 5px;
+            
+        }
+        .hamburger{
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top:5%;
+            transform:translate(-5%,50%);
+            z-index: 2;
+            display: block;
+            
+        }
+        .hamburger div{
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li{
+            
+            opacity:0;
+        }
+       .nav-links li a{
+            font-size: 25px;
+        }
+        .nav-links li:nth-child(1){
+            transition: all 0.5 2s;
+        }
+        .nav-links li:nth-child(2){
+            transition: all 0.5 4s;
+        }
+        .nav-links li:nth-child(3){
+            transition: all 0.5 6s;
+        }
+        .nav-links li:nth-child(4){
+            transition: all 0.5 8s;
+        }
+        .nav-links li:nth-child(5){
+            transition: all 0.5 10s;
+        }
+        .nav-links li.fade{
+            opacity:1;
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-5px,6px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-5px,-6px);
+        }
+    } 
+        
+        
+        
+        /* Our Digital services style begins here */
+
+.services {
+    position:relative;
+    padding: 60px 0 90px 0;
+    text-align: center;
+    margin-top:50px;
+    
+}
+
+.services h2 {
+    color: #000;
+    font: 68px/125% 'Futura PT book';
+    margin-bottom: 90px;
+}
+
+.services .each-services img {
+    width: 80px;
+    height: auto;
+    padding-bottom: 30px;
+}
+
+.services .each-services h3 {
+    color: #000;
+    font-size: 30px;
+    line-height: 110%;
+    font-family: 'Futura PT book';
+    margin-bottom: 20px;
+}
+
+.services .each-services p {
+    color: #000;
+    font-size: 18px;
+    line-height: 120%;
+    font-family: 'Futura PT book';
+    margin-bottom: 70px;
+}
+
+.services .fas ,.services .fab{ 
+    
+    transform:scale(8); 
+    margin-bottom:70px;
+    margin-top:70px;
+    color:skyblue;
+
+}
+
+/* Our Digital services style ends here */
+        
+        
+.process{
+        
+    position: relative;
+    width:100%;
+    height:auto;
+}
+.sdlcCycle{
+    margin-left:15%;
+    margin-right:15%;
+    width:70%;
+    height:auto;
+    }
+        
+.process h2 {
+    color: #000;
+    font: 68px/125% 'Futura PT book';
+    margin-bottom: 90px;
+    width:100%;
+    text-align: center;
+}
+/*@keyframes cycleAnimate{*/
+          
+/*
+             from {
+                 
+                 transform: rotateZ(0deg);
+             }
+             to {
+                 
+                 transform: rotateZ(360deg);
+             }
+*/
+/*             0%{*/
+                 
+/*                 transform: rotateZ(0deg);*/
+/*             }*/
+/*             25%{*/
+                 
+/*                 transform: rotateZ(60deg);*/
+/*             }*/
+/*            50%{*/
+                 
+/*                 transform: rotateZ(120deg);*/
+/*             }*/
+/*            75%{*/
+                 
+/*                 transform: rotateZ(240deg);*/
+/*             }*/
+/*             100% {*/
+                 
+/*                 transform: rotateZ(360deg);*/
+/*             }*/
+/*         }*/
+/*#cycle{*/
+      
+/*    animation: cycleAnimate 12s linear ;*/
+/*    animation-iteration-count: infinite;*/
+/*    transform-origin: center;*/
+/*    transform-box: fill-box;*/
+/*    border: 2px black solid;*/
+
+/*}*/
+/*#planningText,#designText,#testingText,#maintenanceText,#implementText,#analysisText{*/
+      
+    
+/*    transition: all 2s infinite;*/
+
+/*}*/
+/*#planning,#design,#testing{*/
+        
+/*     fill:#0b5793; */
+        
+/*}*/
+/*#maintenance,#implementation,#analysis{*/
+        
+/*     fill:#2da2e2; */
+        
+/*}*/
+/*@keyframes visibleImage{*/
+          
+/*             0% {*/
+                 
+/*                 visibility: hidden;*/
+/*             }*/
+/*             25% {*/
+                
+/*                 opacity:.7;*/
+/*                 visibility: visible;*/
+/*             }*/
+/*             50% {*/
+                 
+/*                 opacity:.9;*/
+/*                 visibility: visible;*/
+/*             }*/
+/*             75% {*/
+                
+/*                 opacity:1;*/
+/*                 visibility: visible;*/
+/*             }*/
+/*             100% {*/
+                
+/*                 visibility: hidden;*/
+/*             }*/
+         
+/*         }   */
+/*#planningImage,#designImage,#testingImage,#maintenanceImage,#implementationImage,#analysisImage {*/
+        
+/*     visibility: hidden;  */
+     
+        
+/*}       */
+/*#planningImage{*/
+    
+/*    animation-delay: 0s;*/
+/*    animation: visibleImage;  */
+/*    animation-duration: 2s;*/
+/*    animation-iteration-count: 1;*/
+    
+    
+    
+/*}*/
+/*#analysisImage{*/
+    
+/*    animation: visibleImage;  */
+/*    animation-delay: 2s;*/
+/*    animation-duration: 2s;*/
+/*    animation-iteration-count: 1;*/
+    
+    
+/*        }*/
+/*#designImage{*/
+       
+/*        animation: visibleImage; */
+/*        animation-delay: 4s;*/
+/*        animation-duration: 2s;*/
+/*        animation-iteration-count: 1;*/
+        
+        
+/*}*/
+/*#implementationImage{*/
+    
+/*    animation: visibleImage; */
+/*    animation-delay: 6s;*/
+/*    animation-duration: 2s;*/
+/*    animation-iteration-count: 1;*/
+    
+    
+/*}*/
+/*#maintenanceImage{*/
+    
+/*    animation: visibleImage;  */
+/*    animation-delay: 8s;*/
+/*    animation-duration: 2s;*/
+/*    animation-iteration-count: 1;*/
+    
+    
+/*} */
+/*#testingImage{*/
+   
+/*    animation: visibleImage;  */
+/*    animation-delay: 10s;*/
+/*    animation-duration: 2s;*/
+/*    animation-iteration-count: 1;*/
+    
+    
+
+/* }        */
+
+        
+        
+        
+    /*image gallery starts         */
+        
+.products{
+        
+    width: 100%;
+    background-image:url(images/hotelchain.PNG);
+    background-image:url(images/cover.jpg);
+
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    height:auto;
+    margin-top: 100px;
+    overflow: hidden; 
+    margin-bottom:30px;
+    background-size: cover;
+    z-index: 10;
+            
+}
+        
+/*        // BASIC*/
+
+.products ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top:4%;
+  transform: rotate(25deg);
+  width: 60%;
+  margin-left: auto;
+  height:auto;  
+  overflow: hidden; 
+  padding-bottom:4%;
+  
+/*  background-size: cover;    */
+}
+
+.products li {
+  height: 40vh;
+  flex-grow: 1;
+  margin: 15px; 
+  
+}
+
+.products li:last-child {
+  
+  flex-grow: 10;
+}
+
+.products img {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 15px;
+  border-style: solid;
+  border-color:whitesmoke;
+  border-width: 5px;
+  background-color:aliceblue;    
+   
+}
+
+.products img:hover {
+    
+   transform: scale(1.02);
+    
+   transition-duration:1s;
+   transition-timing-function: ease-in-out;
+    
+} 
+        .coverQuote::after{
+            content:"";
+            position: absolute;
+            right:0;
+            top:0;
+            
+        }   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+.videoWrapper {
+  margin-top:80px;    
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 96%;
+  left:2%;
+  right:2%;
+}
+
+
+
+        .slides {
+            top:50px;
+            position: relative;
+            display: block;
+height: auto;
+            width: 70%;
+            margin-left:15%;
+            margin-right:15%;
+            background: #fff;
+            transition: background 1s cubic-bezier(0.99, 1, 0.92, 1);
+        }
+        .is-sliding .slides {
+            background: #ededed;
+            transition: background 0.3s cubic-bezier(0.99, 1, 0.92, 1);
+        }
+
+        .slide {
+            z-index: -1;
+            padding: 0;
+            position: absolute;
+            height: auto;
+            width: 70%;
+            width: 100%;
+            
+            transition: z-index 1s ease;
+        }
+        .slide.is-active {
+            z-index: 2;
+            transition: z-index 1s ease;
+        }
+        .slide__content {
+            position: relative;
+            margin: 0 auto;
+            height: auto;
+            width: 70%;
+            
+        }
+        @media (min-width: 54em) {
+            .slide__content {
+                height: 300px;
+                width: auto;
+                
+            }
+        }
+      
+        
+        .slide__figure {
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            height: 300px;
+            width: auto;
+            background-size:cover;
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .is-sliding .slide__figure {
+            transform: scale(0.8);
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .slide__img {
+            position: relative;
+            display: block;
+            
+            background-attachment: fixed;
+            /*background-position: 50%;*/
+            -webkit-backface-visibility: hidden;
+
+            background-repeat:no-repeat;
+            filter: grayscale(0%);
+            transition: height 1s 1.4s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s 0.1s ease;
+        }
+        .is-active .slide__img {
+            height: 100%;
+            opacity: 1;
+            transition: height 0.5s 0.3s cubic-bezier(0.77, 0, 0.175, 1), filter 0.4s 0.1s ease;
+        }
+        .is-sliding .slide__img {
+            filter: grayscale(100%);
+        }
+        
+        
+        @media screen and (max-width: 768px) {
+              .main-content {
+                flex-direction: column;
+              }
+              .content-1{
+                width: 100%;
+                
+                  flex:5;
+              }   
+              .content-3{
+               width: 100%;
+              
+                  flex:5;
+              }    
+            }
+        
+        
+           
+    .nav-links-2{
+        z-index:10;
+        position: absolute;
+        
+        
+        left:8%;
+        /*background-color: grey;*/
+        z-index: 3;
+        height: 40px;
+        top:5px;
+        bottom:5px;
+        
+        
+        align-items: center;
+        margin-left: auto;
+        padding: 0;
+        flex-direction: row;
+        display: inline-flex;
+        justify-content: space-around;
+    }
+    .nav-links-2 li a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 40px;
+        /*color:black;*/
+        color:#ffd302;
+        
+        
+        
+        
+    }
+    
+    .nav-links-2 li{
+        z-index:10;
+        list-style: none;
+
+        margin-left: 15px;
+        overflow: hidden;
+          }
+    
+/* navbar button hover effect   */
+    .btn-item-2{
+        z-index:10;
+        background:  rgba(255,255,255,0);
+        
+        color:white;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        
+        transition: all 0.2s ease;
+        
+        display: inline-flex;
+        
+        height: 90%;
+        flex: auto;
+        text-align: center;
+        
+
+
+        
+    }
+        .btn-item-2::after{
+            background-image:url(down.png);
+        }
+       .accordion-button.collapsed::after{
+            background-image:url(down.png);
+        }
+       .btn-item-2:hover{
+        
+        
+        
+        
+        
+        background:  rgba(255,255,255,.2);
+        transform:scaleX(.99);
+        
+        transform-style: preserve-3d;
+/*
+        transform: rotateX(15deg);
+        box-shadow: 0 15px 15px lightblue;
+*/
+        box-shadow: 0 15px 15px rgba(255,255,255,.01);
+        transition: all 1s ease-out;
+        transform-origin: center;
+    }
+        
+        
+    </style>
+
+</head>
+<body>
+<div class="main">
+          
+<div class="cover">
+<div class="nav-wrapper">      
+<div class="nav">
+     <div class="hamburger">
+           <div class="line line1"></div>
+           <div class="line line2"></div>
+           <div class="line line3"></div>
+       </div>
+       <div class="drawer">
+           <ul class="nav-links">
+               <li><a class="btn-item" href="#">Click 1</a></li>
+               <li><a class="btn-item" href="#">Click 2</a></li>
+               <li><a class="btn-item" href="#">Click 3</a></li>
+               <li><a class="btn-item" href="#">Click 4</a></li>
+               <li><a class="btn-item" href="#">Click 5</a></li>
+               <li><a class="btn-item" href="#">Click 6</a></li>
+            </ul>
+       </div>
+</div>  
+</div> 
+
+  
+</div>
+
+<!--
+<div class="videoWrapper">
+                 <iframe  
+                     src="https://www.youtube.com/embed?listType=playlist&list=PLTBUJ0ZBgvLhUSvThr6SeVkaUaHmRBPP3&index=0" 
+                     title="YouTube video player" 
+                     frameborder="0" 
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                     
+                 </iframe> 
+
+    
+</div>   
+-->
+    
+<!--
+<div class="row justify-content-center">
+
+<div class="col" style="background-color: cadetblue;">
+</div>
+<div class="col-8">
+    <div class="videoWrapper">
+                 <iframe  
+                     src="https://www.youtube.com/embed?listType=playlist&list=PLTBUJ0ZBgvLhUSvThr6SeVkaUaHmRBPP3&index=0" 
+                     title="YouTube video player" 
+                     frameborder="0" 
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                     
+                 </iframe> 
+
+    
+</div>   
+<div class="services">
+        <div class="services-container">
+            <h2>Our digital services</h2>
+            <div class="row" style="width:80%;margin-left: auto;margin-right: auto;">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services">
+
+                        <i class="fab fa-android" ></i>
+
+
+                        <h3>Web Application Design & Development</h3>
+                        <p>You can have your own website right when you want, exactly how you want.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services">
+
+                        <i class="fas fa-chart-bar" ></i>
+
+
+                        <h3>Enterprise Software Development</h3>
+                        <p>Digitize your business with a Enterprise solution.</p>
+                    </div>
+                </div>
+                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services">
+
+                        <i class="fas fa-globe-europe" ></i>
+
+
+                        <h3>Mobile Application Development</h3>
+                        <p>We Build Native,cross-platform android application for your startup & Enterprise.</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>        
+<div class="process">
+<h2>Dev Cycle</h2>    
+</div>  
+</div>    
+<div class="col" style="background-color: cadetblue;">
+</div>    
+</div>
+-->
+<div>
+<div class="main-content" style="height:auto;display: flex;flex-direction: row;flex-wrap:wrap;">
+<div class="content-1" style="background-color: cadetblue;flex:.5;margin-top:50px;">\
+    <img src="left1.png" style="width:100%;margin-bottom: 10px;">
+    <img src="left2.png" style="width:100%;">
+</div>
+<div class="content-2" style="flex: 5;">
+    <div class="videoWrapper">
+                 <iframe  
+                     src="https://www.youtube.com/embed?listType=playlist&list=PLTBUJ0ZBgvLhUSvThr6SeVkaUaHmRBPP3&index=0" 
+                     title="YouTube video player" 
+                     frameborder="0" 
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                     
+                 </iframe> 
+
+    
+</div>   
+<!--
+    <div class="categories" style="width: 96%;margin-left:2%;margin-right:2%;justify-content:space-around;height:80px;">
+       <ul class="nav-wrapper-2" style="list-style-type: none;margin: 0;padding: 0;overflow: hidden;background-color:#222322;align-items: stretch;
+    justify-content: space-between;;width: 100%;">
+           <li class="btn-item-2" style="color: white; display: inline-flex;  color:#ffd302; border-style: none solid none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;">School</li>  
+           <li class="btn-item-2" style="color: white; display: inline-flex;  color:#ffd302; border-style: none solid none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;">College</li>
+           <li class="btn-item-2" style="color: white; display: inline-flex;  color:#ffd302; border-style: none solid none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;">Higher Studies</li>
+           <li class="btn-item-2" style="color: white; display: inline-flex;  color:#ffd302; border-style: none solid none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;">IELTS</li>
+      </ul>
+    </div>
+    
+    
+-->
+    <div class="categories" style="width: 96%;margin-left:2%;margin-right:2%;justify-content:space-around;height:80px;position: relative;height:auto;">
+    
+     <div class="accordion" id="accordionExample">
+  <div class="accordion-item" >
+    <h2 class="accordion-header" style="background-color:#222322;">
+      <button class="accordion-button btn-item-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: white; display: inline-flex;  color:#ffd302; border-style: none none none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;background-color: #222322;">
+        School
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo" style="background-color:#222322;">
+      <button class="accordion-button collapsed btn-item-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: white; display: inline-flex;  color:#ffd302; border-style: none none none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;background-color: #222322;">
+        College
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree" style="background-color:#222322;">
+      <button class="accordion-button collapsed btn-item-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color: white; display: inline-flex;  color:#ffd302; border-style: none none none solid;border-color:#ffd302; padding: 10px;margin-left:5px;margin-right:5px;height:80px;line-height: 60px;background-color: #222322;">
+        Higher Studies
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+   
+<!--
+    <div class="nav-wrapper-2" style="background-color:#222322;width:80%;margin-left:auto;margin-right:auto;">      
+    <div class="nav-2">
+     
+       
+           <ul class="nav-links-2">
+               <li><a class="btn-item-2" href="#">Primary</a></li>
+               <li><a class="btn-item-2" href="#">Secondary</a></li>
+               <li><a class="btn-item-2" href="#">Higher Secondary</a></li>
+               <li><a class="btn-item-2" href="#">Higher Studies</a></li>
+            </ul>
+       
+</div>  
+</div> 
+-->
+</div>    
+<div class="content-3" style="background-color: cadetblue;flex:.5;margin-top:50px;">
+    <img src="right1.jpg" style="width:100%;margin-bottom: 10px;">
+    <img src="right2.jpg" style="width:100%;">
+</div>    
+</div>  
+</div>    
+  
+
+<div class="services">
+        <div class="services-container">
+            <h2>Our digital services</h2>
+            <div class="row" style="width:80%;margin-left: auto;margin-right: auto;">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services">
+
+                        <i class="fab fa-android" ></i>
+
+
+                        <h3>Web Application Design & Development</h3>
+                        <p>You can have your own website right when you want, exactly how you want.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services">
+
+                        <i class="fas fa-chart-bar" ></i>
+
+
+                        <h3>Enterprise Software Development</h3>
+                        <p>Digitize your business with a Enterprise solution.</p>
+                    </div>
+                </div>
+                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="each-services">
+
+                        <i class="fas fa-globe-europe" ></i>
+
+
+                        <h3>Mobile Application Development</h3>
+                        <p>We Build Native,cross-platform android application for your startup & Enterprise.</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>        
+<div class="process">
+<h2>Dev Cycle</h2>    
+</div>      
+<div class="products" id="products" >
+
+            
+            <div>
+<!--
+                <ul class="products-ul" style="padding:0;" >
+                  <li>
+                    <img src="images/coverOverlayImage6.jpg" id="Hotelchainbd.com">
+                  </li>
+                    <li >
+                    <img src="images/coverOverlayImage3.jpg" id="TravelersChoicebd.com">
+                  </li>
+                  <li  >
+                    <img src="images/coverOverlayImage4.jpg" id="Travelerschoicebd.com">
+                  </li>
+                  <li >
+                    <img src="images/coverOverlayImage8.jpg" id="hotelchainbd.com">
+                  </li>                             
+                  <li>
+                    <img src="images/shosti.PNG" id="shosti.com.bd">
+                  </li>
+                  <li>
+                    <img src="images/slide-image-2.png" id="hotelchainbd.com">
+                  </li>
+                      Adding an empty <li> here so the final photo doesn't stretch like crazy. Try removing it and see what happens!  
+                    <li></li>
+                </ul>
+-->
+            
+            </div>
+            
+     </div>    
+</div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>   
+
+ <script>
+     
+ 
+        const hamburger= document.querySelector(".hamburger");
+        const navLinks= document.querySelector(".nav-links");
+        const links= document.querySelectorAll(".nav-links li");
+     
+     
+        // const planningImage= document.querySelector("#planningImage");
+        // const designImage= document.querySelector("#designImage");
+        // const testingImage= document.querySelector("#testingImage");
+        // const maintenanceImage= document.querySelector("#maintenanceImage");
+        // const implementationImage= document.querySelector("#implementationImage");
+        // const analysisImage= document.querySelector("#analysisImage");
+        // planningImage.style.animationDelay="0s";
+        // analysisImage.style.animationDelay="2s";
+        // designImage.style.animationDelay="4s";
+        // implementationImage.style.animationDelay="6s";
+        // testingImage.style.animationDelay="8s";
+        // maintenanceImage.style.animationDelay="10s";
+     
+     
+        hamburger.addEventListener("click",()=>{
+            navLinks.classList.toggle("open");
+            
+            links.forEach(function(element){
+            
+                element.classList.toggle("fade");
+            });
+            
+            hamburger.classList.toggle("toggle");
+        });
+        
+// let refreshRate = 12000;        
+// setInterval(imageChange, refreshRate);   
+// function imageChange(){
+    
+//     console.log("planningImage delay: "+planningImage.style.animationDelay.split("s")[0]);
+//     console.log("analysisImage delay: "+analysisImage.style.animationDelay.split("s")[0]);
+//     console.log("designImage delay: "+designImage.style.animationDelay.split("s")[0]);
+//     console.log("implementationImage delay: "+(implementationImage.style.animationDelay.split("s")[0]));
+//     console.log("testingImage delay: "+testingImage.style.animationDelay.split("s")[0]);
+//     console.log("maintenanceImage delay: "+maintenanceImage.style.animationDelay.split("s")[0]);
+    
+//     planningImage.style.animationDelay=parseInt(planningImage.style.animationDelay.split("s")[0])+12+"s";
+//     analysisImage.style.animationDelay=parseInt(analysisImage.style.animationDelay.split("s")[0])+12+"s";
+//     designImage.style.animationDelay=parseInt(designImage.style.animationDelay.split("s")[0])+12+"s";
+//     implementationImage.style.animationDelay=parseInt(implementationImage.style.animationDelay.split("s")[0])+12+"s";
+//     testingImage.style.animationDelay=parseInt(testingImage.style.animationDelay.split("s")[0])+12+"s";
+//     maintenanceImage.style.animationDelay=parseInt(maintenanceImage.style.animationDelay.split("s")[0])+12+"s";
+    
+
+// }   
+     
+
+     
+//const API_KEY = 'AIzaSyDDe92VicPTWBeGVQMZmNAwfpZ8PCXm0t8';
+//const API_ID = '791151266987-0hij9eds8afn71vn5njrf7ld0iahl10m.apps.googleusercontent.com';
+//const PLAYLIST_ID = 'PLkAvMXRQ_dnVUlM9TyAG6MdA4ggVKPZPQ';
+     
+     
+const API_KEY = 'AIzaSyADwL8r-cgNt8Z8o30CMXZtLXJ18FXkx1E';
+const API_ID = '796338627495-46b6r8c1l4pk0eg43pfd78p9qsj752np.apps.googleusercontent.com';
+const PLAYLIST_ID = 'PLTBUJ0ZBgvLhUSvThr6SeVkaUaHmRBPP3';     
+     
+
+var videoVisible = 0;
+var maxVideoVisible = 50;
+
+const playlistItems = [];
+const playlist = document.getElementsByClassName("playlist")[0];
+
+// From Google API Docs
+function initAPIClient() {
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: API_ID});
+    loadClient().then(getPlaylistItems);
+  });  
+};
+
+// From Google API Docs
+function loadClient() {
+  gapi.client.setApiKey(API_KEY);
+  return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+    .then(
+    function() { 
+      console.log("GAPI client loaded for API"); },
+    function(err) { 
+      console.error("Error loading GAPI client for API", err); 
+    });
+}
+
+function getPlaylistItems(pageToken) {
+    return gapi.client.youtube.playlistItems.list({
+      "part": "snippet,contentDetails",
+      "maxResults": 50, // This is the maximum available value, according to the google docs
+      "playlistId": PLAYLIST_ID,
+      pageToken
+    })
+      .then(function(response) {
+      const { items, nextPageToken } = response.result;
+      
+      // The items[] is an array of a playlist items.
+      // nextPageToken - if empty - there are no items left to fetch
+      
+      playlistItems.push(...items);
+      
+      // It's up to you, how to handle the item from playlist. 
+      // Add `onclick` events to navigate to another video, or use another thumbnail image quality 
+      var index = 0;
+      items.forEach(function(item) {
+          const thumbnailItem = createPlaylistItem(item, index);
+          playlist.appendChild(thumbnailItem);
+          index++;
+        });
+      
+      maxVideoVisible = index - 3;
+      
+
+      // Recursively get another portion of items, if there any left
+      if (nextPageToken) {
+        getPlaylistItems(nextPageToken);        
+      }
+    },
+  function(err) { console.error("Execute error", err); });
+}
+
+function createPlaylistItem(i, index) {
+  var changeIndex = index;
+  const item = document.createElement('div');
+  item.classList.add('playlist-item');
+  item.style.background = `url(https://i.ytimg.com/vi/${i.snippet.resourceId.videoId}/mqdefault.jpg) no-repeat center`;
+  item.style.backgroundSize = 'contain';
+  item.id = index.toString();
+  item.addEventListener("click", function(){ 
+    document.getElementById('iframe_yt').src = "https://www.youtube.com/embed?listType=playlist&list=PLTBUJ0ZBgvLhUSvThr6SeVkaUaHmRBPP3&autoplay=1&index=" + changeIndex.toString();
+  });
+  return item;
+};
+
+
+// Before doing any action with the API ->
+initAPIClient();
+
+function goUp(){
+  if (videoVisible > 0){
+    videoVisible--;
+    document.getElementById(videoVisible.toString()).style.height = "90px";
+  }
+}
+function goDown(){
+    if (videoVisible < maxVideoVisible){
+      document.getElementById(videoVisible.toString()).style.height = "0px";
+     videoVisible++;    
+  }  
+}
+
+     
+     
+    </script>   
+    <script>
+
+    window.setInterval(yourfunction, 10000);
+
+
+    delta= 0;
+    currentSlideIndex=0;
+    scrollThreshold=40;
+    slides=$('.slide');
+    numSlides=$('.slide').length;
+    // navPrev=$('.js-prev');
+    // navNext= $('.js-next');
+    function yourfunction() {
+        // s = this.settings;
+        // this.bindEvents();
+
+        currentSlideIndex++;
+
+        // If on last slide, loop to first
+        if (currentSlideIndex >= 4) {
+            currentSlideIndex = 0;
+        }
+        $('.slide').each(function(i, slide) {
+
+            // Toggle the is-active class to show slide
+            $(slide).toggleClass('is-active', (i === currentSlideIndex));
+            // $(slide).toggleClass('is-prev', (i === currentSlideIndex - 1));
+            $(slide).toggleClass('is-next', (i === currentSlideIndex + 1));
+
+            // $(slide).(.slide__figure).css({'left': '300px', position});
+
+
+
+            //This part is used for shrinking the slider
+            $('body').addClass('is-sliding');
+            //
+            setTimeout(function(){
+                $('body').removeClass('is-sliding');
+            }, 1000);
+        });
+        //This part is used for shrinking the slider
+    }
+
+
+</script>
+</body>
+</html>
+
